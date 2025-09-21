@@ -1,1 +1,1 @@
-https://rottenpotatos-b21870dfb7c4.herokuapp.com/movies?direction=asc&sort=title
+https://rottenpotatos-b21870dfb7c4.herokuapp.com/movies
