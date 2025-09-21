@@ -1,0 +1,36 @@
+/* Bold sorted column instead of color */
+th.sorted-asc,
+th.sorted-desc,
+td.sorted {
+  font-weight: bold;
+}
+
+/* Table styling */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+th, td {
+  border: 1px solid #333;
+  padding: 0.5rem;
+  text-align: left;
+}
+
+tfoot {
+  font-style: italic;
+  background: #f2f2f2;
+}
+
+/* Extra style for polish */
+h1 {
+  text-align: center;
+  color: #444;
+  margin-bottom: 1rem;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #fafafa;
+}

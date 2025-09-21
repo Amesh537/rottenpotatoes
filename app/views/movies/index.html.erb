@@ -9,22 +9,33 @@
 <table>
   <thead>
     <tr>
-      <th><%= link_to "Title", movies_path(sort: :title, direction: params[:direction] == "asc" ? "desc" : "asc") %></th>
-      <th><%= link_to "Rating", movies_path(sort: :rating, direction: params[:direction] == "asc" ? "desc" : "asc") %></th>
-      <th><%= link_to "Release Date", movies_path(sort: :release_date, direction: params[:direction] == "asc" ? "desc" : "asc") %></th>
+      <th class="<%= 'sorted-' + params[:direction] if params[:sort] == 'title' %>">
+        <%= link_to "Title #{params[:sort] == 'title' ? (params[:direction] == 'asc' ? '▲' : '▼') : ''}".html_safe,
+                    movies_path(sort: :title, direction: params[:direction] == "asc" ? "desc" : "asc") %>
+      </th>
+      <th class="<%= 'sorted-' + params[:direction] if params[:sort] == 'rating' %>">
+        <%= link_to "Rating #{params[:sort] == 'rating' ? (params[:direction] == 'asc' ? '▲' : '▼') : ''}".html_safe,
+                    movies_path(sort: :rating, direction: params[:direction] == "asc" ? "desc" : "asc") %>
+      </th>
+      <th class="<%= 'sorted-' + params[:direction] if params[:sort] == 'release_date' %>">
+        <%= link_to "Release Date #{params[:sort] == 'release_date' ? (params[:direction] == 'asc' ? '▲' : '▼') : ''}".html_safe,
+                    movies_path(sort: :release_date, direction: params[:direction] == "asc" ? "desc" : "asc") %>
+      </th>
       <th>More Info</th>
     </tr>
   </thead>
+
   <tbody>
     <% @movies.each do |movie| %>
       <tr>
-        <td><%= movie.title %></td>
-        <td><%= movie.rating %></td>
-        <td><%= movie.release_date %></td>
+        <td class="<%= 'sorted' if params[:sort] == 'title' %>"><%= movie.title %></td>
+        <td class="<%= 'sorted' if params[:sort] == 'rating' %>"><%= movie.rating %></td>
+        <td class="<%= 'sorted' if params[:sort] == 'release_date' %>"><%= movie.release_date %></td>
         <td><%= link_to "Show", movie_path(movie) %></td>
       </tr>
     <% end %>
   </tbody>
+
   <tfoot>
     <tr>
       <td colspan="4"><%= pluralize(@movies.count, "movie") %> total</td>
