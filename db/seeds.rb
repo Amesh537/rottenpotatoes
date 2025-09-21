@@ -24,7 +24,15 @@ more_movies = [
   {:title =>'The Dark Knight', :rating => 'PG-13', 
     :release_date => '18-July-2008'},
   {:title => 'Pulp Fiction', :rating => 'R', 
-    :release_date => '14-Oct-1994'}
+    :release_date => '14-Oct-1994'},
+  {:title => 'Pride and Prejudice', :rating => 'PG', 
+    :release_date => '2005-11-11' },
+  {:title => 'Finding Nemo', :rating => 'G', 
+    :release_date => '2003-05-30' },
+  {:title => 'A Beautiful Mind', :rating => 'PG-13', 
+    :release_date => '2001-12-21' },
+  {:title => 'Warm Bodies', :rating => 'PG-13', 
+    :release_date => '2013-02-01' }
 ]
 
 more_movies.each do |movie|
